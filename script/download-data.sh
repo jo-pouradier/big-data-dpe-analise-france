@@ -1,4 +1,4 @@
-!#/bin/bash
+#/bin/bash
 
 # Download the data from the source
 url_part0="https://data.ademe.fr/data-fair/api/v1/datasets/dpe-"
@@ -19,7 +19,7 @@ do
     url=$url_part0$j$url_part1$i$url_part2
     file_name="./data/dpe-$i.csv.gz"
     echo "Downloading $url"
-    curl -s -o $file_name $url
+    curl --progress-bar -s  -o $file_name $url
     echo "Downloaded $file_name"
     mv $file_name ./data/dpe-$i.csv.gz
     echo "Moved data of data/dpe-$i.csv.gz to data/dpe-all.csv"

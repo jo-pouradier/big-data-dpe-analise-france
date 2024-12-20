@@ -1,0 +1,10 @@
+services:
+  pyspark:
+    image: jupyter/all-spark-notebook
+    container_name: pyspark
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+      - "4041:4041"
+    volumes:
+      - C:\Users\hugue\Documents\BigData\data:/home/jovyan/work
